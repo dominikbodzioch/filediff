@@ -17,6 +17,14 @@ public class MagicNumbersDB {
         magicDB.add(new ExtWithNumbers(new Ext("txt"),new Numbers("")));
     }
 
-
+    boolean isExtHandled(String ext) throws ExtensionNotHandledException {
+        boolean contains = false;
+        for(ExtWithNumbers e: magicDB){
+            if(e.getExt().getExt().equals(ext)){
+                contains = true;
+            }
+        }
+        return contains;
+    }
 
 }
